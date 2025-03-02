@@ -1,5 +1,4 @@
-package pageObjects;
-
+package actions.pageObjects;
 import actions.commons.BasePage;
 import interfaces.pageUI.RegisterPageUI;
 import org.openqa.selenium.WebDriver;

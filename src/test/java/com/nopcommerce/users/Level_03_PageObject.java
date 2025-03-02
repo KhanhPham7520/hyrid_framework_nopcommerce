@@ -1,6 +1,7 @@
 package com.nopcommerce.users;
 
 import actions.commons.BasePage;
+import actions.pageObjects.RegisterPageObject;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -11,7 +12,6 @@ import org.testng.annotations.Test;
 import pageObjects.CustomerInfoPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
-import pageObjects.RegisterPageObject;
 
 import java.time.Duration;
 
