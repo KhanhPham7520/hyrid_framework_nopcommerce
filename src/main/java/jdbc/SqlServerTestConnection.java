@@ -19,7 +19,7 @@ public class SqlServerTestConnection {
 
         Statement statement = conn.createStatement();
 
-        String sql = "SELECT * FROM dbo.Customer;";
+        String sql = "SELECT * FROM Customer;";
 
         ResultSet rs = statement.executeQuery(sql);
 

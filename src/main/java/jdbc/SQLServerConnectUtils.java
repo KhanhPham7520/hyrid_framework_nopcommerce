@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 public class SQLServerConnectUtils {
 
 
+
     public static Connection getSQLServerConnection(){
         String hostName = "localhost";
         String dbName = "NopCommerceDB";
@@ -20,6 +21,8 @@ public class SQLServerConnectUtils {
         try{
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 
+
+            // jdbc:sqlserver://localhost;databaseName=NopCommerceDB;user=sa;password=F@ster456;trustServerCertificate=true";
             String connectionUrl = "jdbc:sqlserver://" +
                     hostName + ";" + "databaseName=" + dbName + ";" + "user="+username + ";"
                     +"password="+password + ";trustServerCertificate=true";
