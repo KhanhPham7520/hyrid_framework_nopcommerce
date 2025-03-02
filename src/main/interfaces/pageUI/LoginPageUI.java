@@ -1,4 +1,4 @@
-package pageUI;
+package interfaces.pageUI;
 
 public class LoginPageUI {
 

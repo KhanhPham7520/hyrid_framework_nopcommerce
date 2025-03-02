@@ -1,5 +1,6 @@
 package jdbc;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,19 +20,29 @@ public class SqlServerTestConnection {
 
         Statement statement = conn.createStatement();
 
-        String sql = "SELECT * FROM Customer;";
+//        String turnOnIdentityInsert = "SET IDENTITY_INSERT Warehouse ON";
 
+//        String insertSql = "INSERT INTO Warehouse (Id, Name, AdminComment, AddressId) " +
+//                "VALUES (3, 'Warehouse 3 (Ho Chi Minh City)', 'Test Comment', 9);";
+
+        String sql = "SELECT Id, Name FROM Product";
+
+        // Turn on IDENTITY_INSERT for auto increment permission
+//        statement.executeUpdate(turnOnIdentityInsert);
+
+//        int rowCount = statement.executeUpdate(insertSql);
+//        System.out.println("Row count affected = " + rowCount);
+
+        // Thực thi câu lệnh SQL trả về đối tuong ResultSet
         ResultSet rs = statement.executeQuery(sql);
 
         while (rs.next()){
-            int customerId = rs.getInt(1);
-            String customerUsername = rs.getString(2);
-            String customerEmail = rs.getString(3);
+            int productId = rs.getInt("Id");
+            String productName = rs.getString("Name");
 
             System.out.println("------------------");
-            System.out.println("Customer Id : "+ customerId);
-            System.out.println("customerUsername : "+ customerUsername);
-            System.out.println("customerEmail : "+ customerEmail);
+            System.out.println("Product Id : " + productId);
+            System.out.println("Product Name : " + productName);
         }
         conn.close();
         System.out.println("----- Closed Connection -------");

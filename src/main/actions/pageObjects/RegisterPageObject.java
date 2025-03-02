@@ -1,8 +1,8 @@
 package pageObjects;
 
-import commons.BasePage;
+import actions.commons.BasePage;
+import interfaces.pageUI.RegisterPageUI;
 import org.openqa.selenium.WebDriver;
-import pageUI.RegisterPageUI;
 
 public class RegisterPageObject extends BasePage {
 
@@ -13,7 +13,7 @@ public class RegisterPageObject extends BasePage {
     }
 
     public void enterToFirstNameTextbox(String inputValue) {
-        waitForElementVisible(driver,RegisterPageUI.FIRST_NAME_TEXT_BOX);
+        waitForElementVisible(driver, RegisterPageUI.FIRST_NAME_TEXT_BOX);
         sendKeyToElement(driver, RegisterPageUI.FIRST_NAME_TEXT_BOX, inputValue);
     }
 
