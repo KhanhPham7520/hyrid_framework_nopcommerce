@@ -4,14 +4,16 @@ import actions.commons.BasePage;
 import actions.pageObjects.RegisterPageObject;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pageObjects.CustomerInfoPageObject;
+import actions.pageObjects.CustomerInfoPageObject;
 import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
+import actions.pageObjects.LoginPageObject;
 
 import java.time.Duration;
 
@@ -27,14 +29,14 @@ public class Level_03_PageObject extends BasePage {
 
     @BeforeClass
     public void beforeClass() {
-        EdgeOptions edgeOptions = new EdgeOptions();
+        ChromeOptions chromeOptions = new ChromeOptions();
 
         // Initialize WebDriver with ChromeOptions
-        driver = new EdgeDriver(edgeOptions);
+        driver = new ChromeDriver(chromeOptions);
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.manage().window().setSize(new Dimension(1280, 800));
-        driver.get("https://demo.nopcommerce.com/");
+        driver.get("http://localhost/");
 
         homePage = new HomePageObject(driver);
     }

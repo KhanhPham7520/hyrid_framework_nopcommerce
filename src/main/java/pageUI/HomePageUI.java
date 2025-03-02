@@ -1,4 +1,4 @@
-package interfaces.pageUI;
+package pageUI;
 
 public class HomePageUI {
 

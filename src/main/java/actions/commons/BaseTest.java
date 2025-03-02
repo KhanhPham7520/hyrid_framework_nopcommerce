@@ -1,4 +1,4 @@
-package commons;
+package actions.commons;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;

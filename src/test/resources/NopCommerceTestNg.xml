@@ -10,10 +10,10 @@
     </test>
 
     <!-- Test configuration for Edge -->
-    <test name="EdgeTest">
-        <parameter name="browser" value="EDGE" />
-        <classes>
-            <class name="com.nopcommerce.users.Level_03_PageObject" />
-        </classes>
-    </test>
+<!--    <test name="EdgeTest">-->
+<!--        <parameter name="browser" value="EDGE" />-->
+<!--        <classes>-->
+<!--            <class name="com.nopcommerce.users.Level_03_PageObject" />-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>
