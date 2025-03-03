@@ -1,11 +1,9 @@
 package actions.commons;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-import pageObjects.HomePageObject;
 
 import java.time.Duration;
 
@@ -13,7 +11,7 @@ public class BaseTest {
 
     private WebDriver driver;
 
-    protected WebDriver getBrowserDriver(String url, String browserName) throws Exception {
+    protected WebDriver getBrowserDriver(String browserName) {
         BrowserType browserType = BrowserType.valueOf(browserName.toUpperCase());
 
         switch (browserType){
@@ -26,11 +24,15 @@ public class BaseTest {
                 break;
 
             default:
-                throw new Exception("No browser found");
+                try {
+                    throw new Exception("No browser found");
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.manage().window().setSize(new Dimension(1280, 800));
-        driver.get("https://demo.nopcommerce.com/");
+        driver.get("http://localhost/");
         return null;
     }
 

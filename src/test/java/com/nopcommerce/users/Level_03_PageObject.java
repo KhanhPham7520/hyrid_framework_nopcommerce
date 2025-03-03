@@ -1,30 +1,23 @@
 package com.nopcommerce.users;
 
-import actions.commons.BasePage;
+import actions.commons.BaseTest;
 import actions.pageObjects.RegisterPageObject;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import actions.pageObjects.CustomerInfoPageObject;
 import pageObjects.HomePageObject;
-import actions.pageObjects.LoginPageObject;
 
 import java.time.Duration;
 
-public class Level_03_PageObject extends BasePage {
+public class Level_03_PageObject extends BaseTest {
 
     WebDriver driver;
-    String emailAddress;
 
     HomePageObject homePage;
-    CustomerInfoPageObject customerInfoPage;
-    LoginPageObject loginPage;
     RegisterPageObject registerPage;
 
     @BeforeClass
