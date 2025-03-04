@@ -5,8 +5,6 @@ import java.sql.DriverManager;
 
 public class SQLServerConnectUtils {
 
-
-
     public static Connection getSQLServerConnection(){
         String hostName = "localhost";
         String dbName = "NopCommerceDB";

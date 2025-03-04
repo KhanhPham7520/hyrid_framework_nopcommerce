@@ -72,6 +72,13 @@ public class BasePage {
         return driver.switchTo().alert().getText();
     }
 
+    public String getText(WebDriver driver, String locator) {
+        WebElement element = driver.findElement(By.xpath(locator));
+        waitForElementVisible(driver, locator);
+        return element.getText();
+    }
+
+
     public void sendkeyAlert(WebDriver driver, String valueToSend) {
         driver.switchTo().alert().sendKeys(valueToSend);
     }
@@ -263,5 +270,7 @@ public class BasePage {
         return new WebDriverWait(driver, Duration.ofSeconds(LONG_TIMEOUT)).
                 until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(locator)));
     }
+
+
 
 }
