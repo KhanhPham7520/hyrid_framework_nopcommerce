@@ -20,12 +20,7 @@ public class DesktopPageAction extends BasePage {
         this.driver = driver;
     }
 
-//    public String getProductName(){
-//        return getText(driver, DesktopPageUI.class);
-//
-//    }
-
-    public int getProductSizeAtUI(){
+    public int getProductSizeAtUI() {
         String totalNumber = getText(driver, DesktopPageUI.SELECTED_PRODUCT_PAGE_SIZE);
         // dùng hàm split() nếu nó hiển thị là 3 items
 //        String totalArray[] = totalNumber.split(" ");
@@ -34,7 +29,7 @@ public class DesktopPageAction extends BasePage {
         return Integer.parseInt(totalNumber);// convert string into integer
     }
 
-    public int getProductSizeAtDB()  {
+    public int getProductSizeAtDB() {
         Connection conn = SQLServerConnectUtils.getSQLServerConnection();
         Statement statement;
         List<Integer> totalProducts = new ArrayList<Integer>();
@@ -43,15 +38,15 @@ public class DesktopPageAction extends BasePage {
             String sql = "SELECT TOP 3 * FROM Product;";
             ResultSet rs = statement.executeQuery(sql);
 
-            while (rs.next()){
+            while (rs.next()) {
                 // Query bao nhiêu thì add bấy nhiu
                 totalProducts.add(rs.getInt(1));
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
-                if(conn != null){
+                if (conn != null) {
                     conn.close();
                 }
             } catch (SQLException e) {

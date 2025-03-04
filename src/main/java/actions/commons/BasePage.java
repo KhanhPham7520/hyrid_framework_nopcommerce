@@ -1,12 +1,12 @@
 package actions.commons;
 
+import actions.pageAction.HomePageAction;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import actions.pageAction.HomePageAction;
 
 import java.time.Duration;
 import java.util.List;
@@ -18,12 +18,12 @@ public class BasePage {
 
     JavascriptExecutor jsExecutor;
 
-    private List<WebElement> getListWebElement(WebDriver driver, String locator){
+    private List<WebElement> getListWebElement(WebDriver driver, String locator) {
         return driver.findElements(By.xpath(locator));
     }
 
-    public HomePageAction clickToElement(WebDriver driver, String locator){
-        waitForElementVisible(driver,locator);
+    public HomePageAction clickToElement(WebDriver driver, String locator) {
+        waitForElementVisible(driver, locator);
         getWebElement(driver, locator).click();
         return new HomePageAction(driver);
     }
@@ -56,7 +56,7 @@ public class BasePage {
         driver.navigate().refresh();
     }
 
-    public WebElement getWebElement(WebDriver driver, String locator){
+    public WebElement getWebElement(WebDriver driver, String locator) {
         return driver.findElement(By.xpath(locator));
     }
 
@@ -139,21 +139,21 @@ public class BasePage {
         driver.switchTo().window(parentWindowHandle);
     }
 
-    public void sendKeyToElement(WebDriver driver, String locator, String valueToSend){
-        waitForElementVisible(driver,locator);
+    public void sendKeyToElement(WebDriver driver, String locator, String valueToSend) {
+        waitForElementVisible(driver, locator);
         getWebElement(driver, locator).clear();
         getWebElement(driver, locator).sendKeys(valueToSend);
     }
 
-    public void selectItemDropdown(WebDriver driver, String locator, String textItem){
-        new Select((getWebElement(driver,locator))).selectByVisibleText(textItem);
+    public void selectItemDropdown(WebDriver driver, String locator, String textItem) {
+        new Select((getWebElement(driver, locator))).selectByVisibleText(textItem);
     }
 
-    public String getSelectItemDropdown(WebDriver driver, String locator, String textItem){
-        return new Select((getWebElement(driver,locator))).getFirstSelectedOption().getText();
+    public String getSelectItemDropdown(WebDriver driver, String locator, String textItem) {
+        return new Select((getWebElement(driver, locator))).getFirstSelectedOption().getText();
     }
 
-    public void isDropdownMultiple(WebDriver driver, String locator, String textItem){
+    public void isDropdownMultiple(WebDriver driver, String locator, String textItem) {
 
     }
 
@@ -179,98 +179,97 @@ public class BasePage {
 //        }
 //    }
 
-    public String getCssValue(WebDriver driver, String locator, String propertyName){
+    public String getCssValue(WebDriver driver, String locator, String propertyName) {
         return getWebElement(driver, locator).getCssValue(propertyName);
     }
 
-    public String getHexaByRgb(String rgbaValue){
+    public String getHexaByRgb(String rgbaValue) {
         return Color.fromString(rgbaValue).asHex().toUpperCase();
     }
 
-    public int getListElementSize(WebDriver driver, String locator){
-        return getListWebElement(driver,locator).size();
+    public int getListElementSize(WebDriver driver, String locator) {
+        return getListWebElement(driver, locator).size();
     }
 
-    public void checkToCheckboxRadio(WebDriver driver, String locator){
-        if(!getWebElement(driver,locator).isSelected()){
-            getWebElement(driver,locator).click();
+    public void checkToCheckboxRadio(WebDriver driver, String locator) {
+        if (!getWebElement(driver, locator).isSelected()) {
+            getWebElement(driver, locator).click();
         }
     }
 
-    public void uncheckToCheckboxRadio(WebDriver driver, String locator){
-        if(getWebElement(driver,locator).isSelected()){
-            getWebElement(driver,locator).click();
+    public void uncheckToCheckboxRadio(WebDriver driver, String locator) {
+        if (getWebElement(driver, locator).isSelected()) {
+            getWebElement(driver, locator).click();
         }
     }
 
-    public boolean isElementDisplayed(WebDriver driver, String locator){
+    public boolean isElementDisplayed(WebDriver driver, String locator) {
         return getWebElement(driver, locator).isDisplayed();
     }
 
-    public boolean isElementSelected(WebDriver driver, String locator){
+    public boolean isElementSelected(WebDriver driver, String locator) {
         return getWebElement(driver, locator).isSelected();
     }
 
-    public boolean isElementEnabled(WebDriver driver, String locator){
+    public boolean isElementEnabled(WebDriver driver, String locator) {
         return getWebElement(driver, locator).isEnabled();
     }
 
-    public void switchToIframe(WebDriver driver, String locator){
-        driver.switchTo().frame(getWebElement(driver,locator));
+    public void switchToIframe(WebDriver driver, String locator) {
+        driver.switchTo().frame(getWebElement(driver, locator));
     }
 
-    public WebDriver switchToDefaultContent(WebDriver driver){
+    public WebDriver switchToDefaultContent(WebDriver driver) {
         return driver.switchTo().defaultContent();
     }
 
-    public void hoverToElement(WebDriver driver, String locator){
+    public void hoverToElement(WebDriver driver, String locator) {
         new Actions(driver).moveToElement(getWebElement(driver, locator)).perform();
     }
 
-    public void doubleToElement(WebDriver driver, String locator){
+    public void doubleToElement(WebDriver driver, String locator) {
         new Actions(driver).doubleClick(getWebElement(driver, locator)).perform();
     }
 
-    public void rightClickToElement(WebDriver driver, String locator){
+    public void rightClickToElement(WebDriver driver, String locator) {
         new Actions(driver).contextClick(getWebElement(driver, locator)).perform();
     }
 
-    public void scrollToElement(WebDriver driver, String locator){
+    public void scrollToElement(WebDriver driver, String locator) {
         new Actions(driver).scrollToElement(getWebElement(driver, locator)).perform();
     }
 
-    public void sendKeyBoardToElement(WebDriver driver, String locator, Keys key){
+    public void sendKeyBoardToElement(WebDriver driver, String locator, Keys key) {
         new Actions(driver).sendKeys(getWebElement(driver, locator), key).perform();
     }
 
-    public void getDomain(WebDriver driver){
+    public void getDomain(WebDriver driver) {
         ((JavascriptExecutor) driver).executeScript("return document.domain");
     }
 
-    public By getByXpath(String locator){
+    public By getByXpath(String locator) {
         return By.xpath(locator);
     }
 
-    public WebElement waitForElementClickable(WebDriver driver, String locator){
+    public WebElement waitForElementClickable(WebDriver driver, String locator) {
         return new WebDriverWait(driver, Duration.ofSeconds(LONG_TIMEOUT)).
                 until(ExpectedConditions.elementToBeClickable(getByXpath(locator)));
     }
 
-    public WebElement waitForElementVisible(WebDriver driver, String locator){
+    public WebElement waitForElementVisible(WebDriver driver, String locator) {
         return new WebDriverWait(driver, Duration.ofSeconds(LONG_TIMEOUT)).
                 until(ExpectedConditions.visibilityOfElementLocated(getByXpath(locator)));
     }
 
-    public boolean waitForElementSelected(WebDriver driver, String locator){
+    public boolean waitForElementSelected(WebDriver driver, String locator) {
         return new WebDriverWait(driver, Duration.ofSeconds(LONG_TIMEOUT)).
-                until(ExpectedConditions.elementToBeSelected(getWebElement(driver,locator)));
+                until(ExpectedConditions.elementToBeSelected(getWebElement(driver, locator)));
     }
 
-    public boolean waitForElementInvisible(WebDriver driver, String locator){
+    public boolean waitForElementInvisible(WebDriver driver, String locator) {
         return new WebDriverWait(driver, Duration.ofSeconds(LONG_TIMEOUT)).
                 until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(locator)));
     }
-
 
 
 }

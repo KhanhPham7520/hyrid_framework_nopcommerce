@@ -6,7 +6,7 @@ public class RegisterPageUI {
 
     private WebDriver driver;
 
-    public RegisterPageUI(WebDriver driver){
+    public RegisterPageUI(WebDriver driver) {
         this.driver = driver;
     }
 

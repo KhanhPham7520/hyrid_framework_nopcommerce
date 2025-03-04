@@ -36,7 +36,7 @@ public class SqlServerTestConnection {
         // Thực thi câu lệnh SQL trả về đối tuong ResultSet
         ResultSet rs = statement.executeQuery(sql);
 
-        while (rs.next()){
+        while (rs.next()) {
             int productId = rs.getInt("Id");
             String productName = rs.getString("Name");
 

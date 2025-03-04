@@ -18,22 +18,22 @@ public class RegisterPageAction extends BasePage {
     }
 
     public void enterToLastNameTextbox(String inputValue) {
-        waitForElementVisible(driver,RegisterPageUI.LAST_NAME_TEXT_BOX);
+        waitForElementVisible(driver, RegisterPageUI.LAST_NAME_TEXT_BOX);
         sendKeyToElement(driver, RegisterPageUI.LAST_NAME_TEXT_BOX, inputValue);
     }
 
     public void enterToEmailTextbox(String inputValue) {
-        waitForElementVisible(driver,RegisterPageUI.EMAIL_TEXT_BOX);
+        waitForElementVisible(driver, RegisterPageUI.EMAIL_TEXT_BOX);
         sendKeyToElement(driver, RegisterPageUI.EMAIL_TEXT_BOX, inputValue);
     }
 
     public void enterToPasswordTextbox(String inputValue) {
-        waitForElementVisible(driver,RegisterPageUI.PASSWORD_TEXT_BOX);
+        waitForElementVisible(driver, RegisterPageUI.PASSWORD_TEXT_BOX);
         sendKeyToElement(driver, RegisterPageUI.PASSWORD_TEXT_BOX, inputValue);
     }
 
     public void enterToConfirmPasswordTextbox(String inputValue) {
-        waitForElementVisible(driver,RegisterPageUI.CONFIRM_PASSWORD_TEXT_BOX);
+        waitForElementVisible(driver, RegisterPageUI.CONFIRM_PASSWORD_TEXT_BOX);
         sendKeyToElement(driver, RegisterPageUI.CONFIRM_PASSWORD_TEXT_BOX, inputValue);
     }
 

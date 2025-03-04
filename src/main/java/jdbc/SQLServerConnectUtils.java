@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 
 public class SQLServerConnectUtils {
 
-    public static Connection getSQLServerConnection(){
+    public static Connection getSQLServerConnection() {
         String hostName = "localhost";
         String dbName = "NopCommerceDB";
         String userName = "sa";
@@ -14,19 +14,19 @@ public class SQLServerConnectUtils {
     }
 
     public static Connection getSqlServerConnection(String hostName, String dbName,
-                                                     String username,String password){
+                                                    String username, String password) {
         Connection conn = null;
-        try{
+        try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 
 
             // jdbc:sqlserver://localhost;databaseName=NopCommerceDB;user=sa;password=F@ster456;trustServerCertificate=true";
             String connectionUrl = "jdbc:sqlserver://" +
-                    hostName + ";" + "databaseName=" + dbName + ";" + "user="+username + ";"
-                    +"password="+password + ";trustServerCertificate=true";
+                    hostName + ";" + "databaseName=" + dbName + ";" + "user=" + username + ";"
+                    + "password=" + password + ";trustServerCertificate=true";
 
             conn = DriverManager.getConnection(connectionUrl, username, password);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return conn;

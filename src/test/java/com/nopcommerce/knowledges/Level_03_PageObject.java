@@ -1,6 +1,7 @@
 package com.nopcommerce.knowledges;
 
 import actions.commons.BaseTest;
+import actions.pageAction.HomePageAction;
 import actions.pageAction.RegisterPageAction;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +10,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import actions.pageAction.HomePageAction;
 
 import java.time.Duration;
 
@@ -55,7 +55,7 @@ public class Level_03_PageObject extends BaseTest {
     }
 
     @Test
-    public void TC_02_Login(){
+    public void TC_02_Login() {
         homePage.clickToLoginLink();
 //
 //        loginPage = new LoginPageObject();

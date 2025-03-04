@@ -3,17 +3,17 @@
 <suite name="MultiBrowserSuite" parallel="tests" thread-count="2">
     <!-- Test configuration for Chrome -->
     <test name="ChromeTest">
-        <parameter name="browser" value="CHROME" />
+        <parameter name="browser" value="CHROME"/>
         <classes>
-            <class name="com.nopcommerce.users.User_01_View_Product" />
+            <class name="com.nopcommerce.users.User_01_View_Product"/>
         </classes>
     </test>
 
     <!-- Test configuration for Edge -->
-<!--    <test name="EdgeTest">-->
-<!--        <parameter name="browser" value="EDGE" />-->
-<!--        <classes>-->
-<!--            <class name="com.nopcommerce.knowledges.Level_03_PageObject" />-->
-<!--        </classes>-->
-<!--    </test>-->
+    <!--    <test name="EdgeTest">-->
+    <!--        <parameter name="browser" value="EDGE" />-->
+    <!--        <classes>-->
+    <!--            <class name="com.nopcommerce.knowledges.Level_03_PageObject" />-->
+    <!--        </classes>-->
+    <!--    </test>-->
 </suite>
