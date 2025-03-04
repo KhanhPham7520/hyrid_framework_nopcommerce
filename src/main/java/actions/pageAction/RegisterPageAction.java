@@ -1,14 +1,14 @@
-package actions.pageObjects;
+package actions.pageAction;
 
 import actions.commons.BasePage;
 import org.openqa.selenium.WebDriver;
 import pageUI.RegisterPageUI;
 
-public class RegisterPageObject extends BasePage {
+public class RegisterPageAction extends BasePage {
 
     private WebDriver driver;
 
-    public RegisterPageObject(WebDriver driver) {
+    public RegisterPageAction(WebDriver driver) {
         this.driver = driver;
     }
 

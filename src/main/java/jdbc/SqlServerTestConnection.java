@@ -24,7 +24,8 @@ public class SqlServerTestConnection {
 //        String insertSql = "INSERT INTO Warehouse (Id, Name, AdminComment, AddressId) " +
 //                "VALUES (3, 'Warehouse 3 (Ho Chi Minh City)', 'Test Comment', 9);";
 
-        String sql = "SELECT Id, Name FROM Product";
+//        String sql = "SELECT Id, Name FROM Product";
+        String sql = "SELECT TOP 3 * FROM Product;";
 
         // Turn on IDENTITY_INSERT for auto increment permission
 //        statement.executeUpdate(turnOnIdentityInsert);

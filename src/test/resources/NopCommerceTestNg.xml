@@ -5,7 +5,7 @@
     <test name="ChromeTest">
         <parameter name="browser" value="CHROME" />
         <classes>
-            <class name="com.nopcommerce.users.Level_03_PageObject" />
+            <class name="com.nopcommerce.knowledges.Level_03_PageObject" />
         </classes>
     </test>
 
@@ -13,7 +13,7 @@
 <!--    <test name="EdgeTest">-->
 <!--        <parameter name="browser" value="EDGE" />-->
 <!--        <classes>-->
-<!--            <class name="com.nopcommerce.users.Level_03_PageObject" />-->
+<!--            <class name="com.nopcommerce.knowledges.Level_03_PageObject" />-->
 <!--        </classes>-->
 <!--    </test>-->
 </suite>

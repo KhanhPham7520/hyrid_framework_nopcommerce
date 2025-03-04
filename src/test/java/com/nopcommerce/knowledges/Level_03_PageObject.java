@@ -1,7 +1,7 @@
-package com.nopcommerce.users;
+package com.nopcommerce.knowledges;
 
 import actions.commons.BaseTest;
-import actions.pageObjects.RegisterPageObject;
+import actions.pageAction.RegisterPageAction;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pageObjects.HomePageObject;
+import actions.pageAction.HomePageAction;
 
 import java.time.Duration;
 
@@ -17,8 +17,8 @@ public class Level_03_PageObject extends BaseTest {
 
     WebDriver driver;
 
-    HomePageObject homePage;
-    RegisterPageObject registerPage;
+    HomePageAction homePage;
+    RegisterPageAction registerPage;
 
     @BeforeClass
     public void beforeClass() {
@@ -31,14 +31,14 @@ public class Level_03_PageObject extends BaseTest {
         driver.manage().window().setSize(new Dimension(1280, 800));
         driver.get("http://localhost/");
 
-        homePage = new HomePageObject(driver);
+        homePage = new HomePageAction(driver);
     }
 
     @Test
     public void TC_01_Register() {
         homePage.clickToRegisterLink();
 
-        registerPage = new RegisterPageObject(driver);
+        registerPage = new RegisterPageAction(driver);
         registerPage.enterToFirstNameTextbox("");
 //        registerPage.enterToLastNameTextbox("");
 //        registerPage.enterToEmailTextbox("");

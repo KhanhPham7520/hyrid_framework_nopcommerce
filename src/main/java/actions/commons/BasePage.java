@@ -6,6 +6,7 @@ import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import actions.pageAction.HomePageAction;
 
 import java.time.Duration;
 import java.util.List;
@@ -21,8 +22,10 @@ public class BasePage {
         return driver.findElements(By.xpath(locator));
     }
 
-    public void clickToElement(WebDriver driver, String locator){
+    public HomePageAction clickToElement(WebDriver driver, String locator){
+        waitForElementVisible(driver,locator);
         getWebElement(driver, locator).click();
+        return new HomePageAction(driver);
     }
 
     public void openPageUrl(WebDriver driver, String url) {
@@ -130,6 +133,7 @@ public class BasePage {
     }
 
     public void sendKeyToElement(WebDriver driver, String locator, String valueToSend){
+        waitForElementVisible(driver,locator);
         getWebElement(driver, locator).clear();
         getWebElement(driver, locator).sendKeys(valueToSend);
     }

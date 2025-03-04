@@ -1,15 +1,15 @@
-package pageObjects;
+package actions.pageAction;
 
 import actions.commons.BasePage;
 import org.openqa.selenium.WebDriver;
 import pageUI.HomePageUI;
 
 
-public class HomePageObject extends BasePage {
+public class HomePageAction extends BasePage {
 
     private WebDriver driver;
 
-    public HomePageObject(WebDriver driver) {
+    public HomePageAction(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -18,8 +18,9 @@ public class HomePageObject extends BasePage {
         clickToElement(driver,HomePageUI.REGISTER_LINK);
     }
 
-    public void clickToLoginLink() {
+    public LoginPageAction clickToLoginLink() {
         waitForElementVisible(driver, HomePageUI.LOGIN_LINK);
         clickToElement(driver,HomePageUI.LOGIN_LINK);
+        return new LoginPageAction(driver);
     }
 }
