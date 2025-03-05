@@ -50,6 +50,24 @@ public class Topic_12_String {
         String driverInstanceName = driver.toString();
         System.out.println("Driver Instance Name : " + driverInstanceName);
 
+        System.out.println("----------------------------------------------------------------------");
+
+        String helloWorld = " \n       \t    Hello World       ";
+        System.out.println("Xóa tất cả các khoảng trắng : " + helloWorld.trim());
+
+        String helloWordGet = helloWorld.trim();
+
+        String strSplit[] = helloWordGet.split(" ");
+
+        System.out.println("Đã get dc : " + strSplit[1]);
+
+        String countStr = strSplit[1];
+        int count = 0;
+        for (int i = 0; i < countStr.length(); i++) {
+            count++;
+        }
+        System.out.println("Chữ World có " + count + " kí tự");
+
     }
 
     @Test
