@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class Level_03_PageObject extends BaseTest {
+public class Level_03_Page_Object extends BaseTest {
 
     WebDriver driver;
 
@@ -40,28 +40,11 @@ public class Level_03_PageObject extends BaseTest {
 
         registerPage = new RegisterPageAction(driver);
         registerPage.enterToFirstNameTextbox("");
-//        registerPage.enterToLastNameTextbox("");
-//        registerPage.enterToEmailTextbox("");
-//        registerPage.enterToPasswordTextbox("");
-//        registerPage.enterToConfirmPasswordTextbox("");
-//
-//        registerPage.clickToRegisterButton();
-//
-//        Assert.assertEquals("","", "Your registration completed");
-//        registerPage.getRegisterSuccessMessage();
-//
-//        // Navigate back to Home Page
-//        homePage = new HomePageObject();
     }
 
     @Test
     public void TC_02_Login() {
         homePage.clickToLoginLink();
-//
-//        loginPage = new LoginPageObject();
-//        loginPage.enterToEmailTextbox();
-//        loginPage.enterToPasswordTextbox();
-//        loginPage.clickToLoginButton();
     }
 
 

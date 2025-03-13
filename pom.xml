@@ -42,12 +42,12 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- TestNG for Test Framework -->
+        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.8.0</version>
-            <scope>test</scope>
+            <version>7.10.2</version>
+            <scope>compile</scope>
         </dependency>
 
         <!-- Apache POI for Excel File Handling -->
@@ -122,12 +122,15 @@
             <artifactId>mssql-jdbc</artifactId>
             <version>12.8.1.jre11</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>RELEASE</version>
-            <scope>compile</scope>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.10.2</version>
+            <scope>test</scope>
         </dependency>
+
 
 
     </dependencies>
