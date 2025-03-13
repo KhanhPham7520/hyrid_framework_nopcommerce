@@ -2,8 +2,8 @@ package actions.pageAction;
 
 import actions.commons.BasePage;
 import actions.pageAction.products.DesktopPageAction;
+import actions.pageUI.HomePageUI;
 import org.openqa.selenium.WebDriver;
-import pageUI.HomePageUI;
 
 
 public class HomePageAction extends BasePage {

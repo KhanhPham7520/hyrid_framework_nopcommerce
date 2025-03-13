@@ -4,6 +4,7 @@ import actions.commons.BaseTest;
 import actions.pageAction.HomePageAction;
 import actions.pageAction.LoginPageAction;
 import actions.pageAction.products.DesktopPageAction;
+import actions.pageUI.LoginPageUI;
 import jdk.jfr.Description;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.Dimension;
@@ -14,7 +15,6 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pageUI.LoginPageUI;
 
 import java.time.Duration;
 

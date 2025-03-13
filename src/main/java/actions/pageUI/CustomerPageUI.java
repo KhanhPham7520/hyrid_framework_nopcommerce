@@ -1,4 +1,4 @@
-package pageUI;
+package actions.pageUI;
 
 public class CustomerPageUI {
 }

@@ -1,8 +1,8 @@
 package actions.pageAction;
 
 import actions.commons.BasePage;
+import actions.pageUI.RegisterPageUI;
 import org.openqa.selenium.WebDriver;
-import pageUI.RegisterPageUI;
 
 public class RegisterPageAction extends BasePage {
 

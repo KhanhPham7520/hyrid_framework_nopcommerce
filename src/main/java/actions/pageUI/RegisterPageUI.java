@@ -1,4 +1,4 @@
-package pageUI;
+package actions.pageUI;
 
 import org.openqa.selenium.WebDriver;
 
