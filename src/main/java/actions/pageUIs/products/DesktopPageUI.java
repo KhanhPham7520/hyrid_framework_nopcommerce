@@ -1,4 +1,4 @@
-package actions.pageUI.products;
+package actions.pageUIs.products;
 
 public class DesktopPageUI {
 

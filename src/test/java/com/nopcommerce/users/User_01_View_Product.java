@@ -4,7 +4,7 @@ import actions.commons.BaseTest;
 import actions.pageAction.HomePageAction;
 import actions.pageAction.LoginPageAction;
 import actions.pageAction.products.DesktopPageAction;
-import actions.pageUI.LoginPageUI;
+import actions.pageUIs.LoginPageUI;
 import jdk.jfr.Description;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.Dimension;

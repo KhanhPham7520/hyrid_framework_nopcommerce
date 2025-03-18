@@ -2,7 +2,7 @@ package actions.pageAction;
 
 import actions.commons.BasePage;
 import actions.pageAction.products.DesktopPageAction;
-import actions.pageUI.HomePageUI;
+import actions.pageUIs.HomePageUI;
 import org.openqa.selenium.WebDriver;
 
 

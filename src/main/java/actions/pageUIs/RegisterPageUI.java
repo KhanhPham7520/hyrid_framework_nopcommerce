@@ -1,4 +1,4 @@
-package actions.pageUI;
+package actions.pageUIs;
 
 import org.openqa.selenium.WebDriver;
 
@@ -21,4 +21,6 @@ public class RegisterPageUI {
     public static final String CONFIRM_PASSWORD_TEXT_BOX = "//input[@id='ConfirmPassword']";
 
     public static final String REGISTER_BUTTON = "//input[@id='register-button']";
+
+    public static final String REGISTER_SUCCESS_MESSAGE = "//div[text()='Your registration completed']";
 }

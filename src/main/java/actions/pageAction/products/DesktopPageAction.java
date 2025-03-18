@@ -2,7 +2,7 @@ package actions.pageAction.products;
 
 import actions.commons.BasePage;
 import actions.jdbc.SQLServerConnectUtils;
-import actions.pageUI.products.DesktopPageUI;
+import actions.pageUIs.products.DesktopPageUI;
 import org.openqa.selenium.WebDriver;
 
 import java.sql.Connection;
