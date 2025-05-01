@@ -36,5 +36,6 @@ public class HomePageObject extends BasePage {
     }
 
     public void clickToLoginLink() {
+
     }
 }

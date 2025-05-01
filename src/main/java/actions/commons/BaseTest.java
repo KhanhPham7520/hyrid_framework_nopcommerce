@@ -18,7 +18,7 @@ public class BaseTest {
     protected CustomerInfoPageObject customerInfoPage;
     protected DesktopPageObject desktopPage;
 
-    protected WebDriver getBrowserDriver(String browserName) {
+    protected WebDriver getBrowserDriver(String url, String browserName) {
         BrowserType browserType = BrowserType.valueOf(browserName.toUpperCase());
 
         switch (browserType) {
@@ -39,8 +39,39 @@ public class BaseTest {
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.manage().window().setSize(new Dimension(1280, 800));
-        driver.get("http://localhost/");
-        return null;
+        driver.get(url);
+
+        return driver;
     }
 
+    protected void closeBrowserDriver(WebDriver driver) {
+        if (driver != null) {
+            driver.quit();
+        }
+        killDriverProcess();
+    }
+
+
+    protected void killDriverProcess() {
+        String os = System.getProperty("os.name").toLowerCase();
+        Runtime runtime = Runtime.getRuntime();
+
+        try {
+            if (os.contains("mac") || os.contains("nix") || os.contains("nux")) {
+                // macOS/Linux
+                runtime.exec("pkill -f chromedriver");
+                runtime.exec("pkill -f geckodriver");
+                runtime.exec("pkill -f msedgedriver");
+            } else if (os.contains("win")) {
+                // Windows
+                runtime.exec("taskkill /F /IM chromedriver.exe");
+                runtime.exec("taskkill /F /IM geckodriver.exe");
+                runtime.exec("taskkill /F /IM msedgedriver.exe");
+            } else {
+                System.out.println("Unsupported OS: " + os);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -31,7 +31,6 @@ public class Level_03_Page_Object extends BaseTest {
         customerInfoPage = PageGenerator.getCustomerInfoPage(driver);
     }
 
-
     @Test
     public void User_01_Register() {
         homePage.clickToRegisterLink();

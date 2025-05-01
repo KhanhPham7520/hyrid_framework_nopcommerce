@@ -8,8 +8,10 @@
     </listeners>
 
     <test name="Run on Chrome browser">
+        <parameter name="url" value="https://www.youtube.com/" />
+        <parameter name="browser" value="CHROME" />
         <classes>
-            <class name="com.jquery"/>
+            <class name="com.jquery.Level_13_UploadFile"/>
         </classes>
     </test>
 
