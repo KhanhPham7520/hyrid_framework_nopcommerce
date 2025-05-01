@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="NopCommerce Automation Testing" parallel="tests" thread-count="2">
-    <!-- Test configuration for Chrome -->
-    <!--    <test name="ChromeTest">-->
-    <!--        <parameter name="browser" value="CHROME"/>-->
-    <!--        <classes>-->
-    <!--            <class name="com.nopcommerce.users.User_01_View_Product"/>-->
-    <!--        </classes>-->
-    <!--    </test>-->
 
 
     <listeners>
         <listener class-name="actions.reportConfigs.ExtentListener"/>
     </listeners>
 
-    <test name="ChromeTest">
+    <test name="Run on Chrome browser">
         <classes>
-            <class name="com.nopcommerce.users.User_01_Register_Login"/>
-            <class name="com.nopcommerce.users.Level_01_Repeat_Yourself"/>
-            <class name="com.nopcommerce.knowledges.Level_03_Page_Object"/>
+            <class name="com.jquery"/>
         </classes>
     </test>
 
@@ -26,7 +17,7 @@
     <!--    <test name="EdgeTest">-->
     <!--        <parameter name="browser" value="EDGE" />-->
     <!--        <classes>-->
-    <!--            <class name="com.nopcommerce.knowledges.Level_03_Page_Object" />-->
+    <!--            <class name="com.knowledges.Level_03_Page_Object" />-->
     <!--        </classes>-->
     <!--    </test>-->
 

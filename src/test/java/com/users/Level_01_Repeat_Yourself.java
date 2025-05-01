@@ -1,4 +1,4 @@
-package com.nopcommerce.users;
+package com.users;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

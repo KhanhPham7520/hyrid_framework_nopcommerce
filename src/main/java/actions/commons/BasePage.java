@@ -14,9 +14,45 @@ import java.util.Set;
 
 public class BasePage {
 
+    protected WebDriver driver;
+    JavascriptExecutor jsExecutor;
     private long LONG_TIMEOUT = 30;
 
-    JavascriptExecutor jsExecutor;
+    public static void switchToWindowByTitle(WebDriver driver, String windowTitle) {
+        // Get all window handles
+        Set<String> windowHandles = driver.getWindowHandles();
+
+        // Loop through each window handle
+        for (String handle : windowHandles) {
+            // Switch to the window
+            driver.switchTo().window(handle);
+
+            // Check the title of the current window
+            if (driver.getTitle().equals(windowTitle)) {
+                System.out.println("Switched to window with title: " + windowTitle);
+                return;
+            }
+        }
+        throw new RuntimeException("Window with title '" + windowTitle + "' not found.");
+    }
+
+    public static void closeAllWindowsWithoutParent(WebDriver driver, String parentWindowHandle) {
+        // Get all window handles
+        Set<String> windowHandles = driver.getWindowHandles();
+
+        // Loop through each window handle
+        for (String handle : windowHandles) {
+            // Skip the parent window
+            if (!handle.equals(parentWindowHandle)) {
+                // Switch to the window and close it
+                driver.switchTo().window(handle);
+                System.out.println("Closing window with handle: " + handle);
+                driver.close();
+            }
+        }
+        // Switch back to the parent window
+        driver.switchTo().window(parentWindowHandle);
+    }
 
     private List<WebElement> getListWebElement(WebDriver driver, String locator) {
         return driver.findElements(By.xpath(locator));
@@ -78,7 +114,6 @@ public class BasePage {
         return element.getText();
     }
 
-
     public void sendkeyAlert(WebDriver driver, String valueToSend) {
         driver.switchTo().alert().sendKeys(valueToSend);
     }
@@ -101,42 +136,6 @@ public class BasePage {
             }
         }
         throw new RuntimeException("Window with ID " + windowId + " not found.");
-    }
-
-    public static void switchToWindowByTitle(WebDriver driver, String windowTitle) {
-        // Get all window handles
-        Set<String> windowHandles = driver.getWindowHandles();
-
-        // Loop through each window handle
-        for (String handle : windowHandles) {
-            // Switch to the window
-            driver.switchTo().window(handle);
-
-            // Check the title of the current window
-            if (driver.getTitle().equals(windowTitle)) {
-                System.out.println("Switched to window with title: " + windowTitle);
-                return;
-            }
-        }
-        throw new RuntimeException("Window with title '" + windowTitle + "' not found.");
-    }
-
-    public static void closeAllWindowsWithoutParent(WebDriver driver, String parentWindowHandle) {
-        // Get all window handles
-        Set<String> windowHandles = driver.getWindowHandles();
-
-        // Loop through each window handle
-        for (String handle : windowHandles) {
-            // Skip the parent window
-            if (!handle.equals(parentWindowHandle)) {
-                // Switch to the window and close it
-                driver.switchTo().window(handle);
-                System.out.println("Closing window with handle: " + handle);
-                driver.close();
-            }
-        }
-        // Switch back to the parent window
-        driver.switchTo().window(parentWindowHandle);
     }
 
     public void sendKeyToElement(WebDriver driver, String locator, String valueToSend) {

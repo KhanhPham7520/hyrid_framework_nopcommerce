@@ -11,14 +11,13 @@ import java.util.Map;
 public class ExtentManager {
 
     private static Map<Integer, ExtentTest> extentTestMap = new HashMap<Integer, ExtentTest>();
-    private static ExtentReports extent = ExtentManager.getReporter();
 
     public synchronized static ExtentReports getReporter() {
         if (extent == null) {
             extent = new ExtentReports(GlobalConstant.EXTENT_PATH + "/ExtentReportV2.html", true);
         }
         return extent;
-    }
+    }    private static ExtentReports extent = ExtentManager.getReporter();
 
     public static synchronized ExtentTest getTest() {
         return (ExtentTest) extentTestMap.get((int) (long) (Thread.currentThread().getId()));
@@ -33,4 +32,6 @@ public class ExtentManager {
         extentTestMap.put((int) (long) (Thread.currentThread().getId()), test);
         return test;
     }
+
+
 }

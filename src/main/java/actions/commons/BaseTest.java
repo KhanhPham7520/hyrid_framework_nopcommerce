@@ -1,5 +1,9 @@
 package actions.commons;
 
+import actions.pageObjects.CustomerInfoPageObject;
+import actions.pageObjects.HomePageObject;
+import actions.pageObjects.LoginPageObject;
+import actions.pageObjects.RegisterPageObject;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,7 +13,12 @@ import java.time.Duration;
 
 public class BaseTest {
 
-    private WebDriver driver;
+    protected WebDriver driver;
+
+    protected HomePageObject homePage;
+    protected RegisterPageObject registerPage;
+    protected LoginPageObject loginPage;
+    protected CustomerInfoPageObject customerInfoPage;
 
     protected WebDriver getBrowserDriver(String browserName) {
         BrowserType browserType = BrowserType.valueOf(browserName.toUpperCase());

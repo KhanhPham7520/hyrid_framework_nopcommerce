@@ -1,4 +1,4 @@
-package com.nopcommerce.users;
+package com.users;
 
 import actions.commons.BaseTest;
 import actions.pageAction.HomePageAction;

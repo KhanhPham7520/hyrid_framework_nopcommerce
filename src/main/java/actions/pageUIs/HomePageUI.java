@@ -11,4 +11,6 @@ public class HomePageUI {
 
     public static final String DESKTOP_HEADER_SUB_ITEM = "//ul[contains(@class,'notmobile')]//" +
             "li//a[contains(text(),'Desktops')]";
+
+    public static final String MY_ACCOUNT_LINK = ;
 }

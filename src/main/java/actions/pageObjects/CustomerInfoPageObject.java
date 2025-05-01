@@ -1,6 +1,16 @@
 package actions.pageObjects;
 
-public class CustomerInfoPageObject {
+import actions.commons.BasePage;
+import org.openqa.selenium.WebDriver;
+
+public class CustomerInfoPageObject extends BasePage {
+
+    private WebDriver driver;
+
+    public CustomerInfoPageObject(WebDriver driver) {
+        this.driver = driver;
+    }
+
     public boolean isGenderMaleSelected() {
         return false;
     }
