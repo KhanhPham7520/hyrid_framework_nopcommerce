@@ -1,9 +1,7 @@
 package com.users;
 
 import actions.commons.BaseTest;
-import actions.pageAction.HomePageAction;
-import actions.pageAction.LoginPageAction;
-import actions.pageAction.products.DesktopPageAction;
+import actions.pageAction.PageGenerator;
 import actions.pageUIs.LoginPageUI;
 import jdk.jfr.Description;
 import lombok.extern.slf4j.Slf4j;
@@ -22,9 +20,6 @@ import java.time.Duration;
 public class User_01_View_Product extends BaseTest {
 
     WebDriver driver;
-    HomePageAction homePage;
-    LoginPageAction loginPage;
-    DesktopPageAction desktopPageAction;
 
     @BeforeClass
     public void beforeClass() {
@@ -36,28 +31,26 @@ public class User_01_View_Product extends BaseTest {
         driver.manage().window().setSize(new Dimension(1280, 800));
         driver.get("http://localhost/");
 
-        homePage = new HomePageAction(driver);
-        loginPage = new LoginPageAction(driver);
+        homePage = PageGenerator.getHomePage(driver);
+        loginPage = PageGenerator.getLoginPage(driver);
+        desktopPage = PageGenerator.getDesktopPage(driver);
 
-        loginPage = homePage.clickToLoginLink();
 
         loginPage.sendKeyToElement(driver, LoginPageUI.EMAIL_TEXTBOX, "phamphannhatkhanh7520@gmail.com");
         loginPage.sendKeyToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, "Testing123");
-        homePage = loginPage.clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
-
     }
 
     @Test
     @Description("Check product size between UI And DB")
     public void TC_01_Check_Matching_Number_Item_Between_UI_AND_DB() {
         log.info("View Product - Step 01 : Navigate to TOP 3 Product");
-        desktopPageAction = homePage.navigateToTop3Product();
+        desktopPage = homePage.navigateToTop3Product();
 
         log.info("View Product - Step 02 : Get all product from UI");
-        int totalNumberFromUI = desktopPageAction.getProductSizeAtUI();
+        int totalNumberFromUI = desktopPage.getProductSizeAtUI();
 
         log.info("View Product - Step 03 : Get all product from DB");
-        int totalNumberFromDB = desktopPageAction.getProductSizeAtDB();
+        int totalNumberFromDB = desktopPage.getProductSizeAtDB();
 
         log.info("View Product - Step 04 : Verify the product size are matching");
         Assert.assertEquals(totalNumberFromUI, totalNumberFromDB);

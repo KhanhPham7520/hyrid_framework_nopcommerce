@@ -2,7 +2,6 @@ package com.users;
 
 import actions.commons.BaseTest;
 import actions.pageAction.PageGenerator;
-import actions.pageAction.RegisterPageAction;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,8 +16,6 @@ public class Level_06_PageGenerator_III extends BaseTest {
 
     WebDriver driver;
 
-    RegisterPageAction registerPage;
-
     @BeforeClass
     public void beforeClass() {
         ChromeOptions chromeOptions = new ChromeOptions();
@@ -31,13 +28,12 @@ public class Level_06_PageGenerator_III extends BaseTest {
         driver.get("http://localhost/");
 
         homePage = PageGenerator.getHomePage(driver);
+        registerPage = PageGenerator.getRegisterPage(driver);
     }
 
     @Test
     public void TC_01_Register() {
         homePage.clickToRegisterLink();
-
-        registerPage = new RegisterPageAction(driver);
         registerPage.enterToFirstNameTextbox("");
     }
 

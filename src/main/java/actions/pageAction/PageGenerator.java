@@ -1,9 +1,6 @@
 package actions.pageAction;
 
-import actions.pageObjects.CustomerInfoPageObject;
-import actions.pageObjects.HomePageObject;
-import actions.pageObjects.LoginPageObject;
-import actions.pageObjects.RegisterPageObject;
+import actions.pageObjects.*;
 import org.openqa.selenium.WebDriver;
 
 public class PageGenerator {
@@ -28,6 +25,10 @@ public class PageGenerator {
 
     public static CustomerInfoPageObject getCustomerInfoPage(WebDriver driver) {
         return new CustomerInfoPageObject(driver);
+    }
+
+    public static DesktopPageObject getDesktopPage(WebDriver driver) {
+        return new DesktopPageObject(driver);
     }
 
 }

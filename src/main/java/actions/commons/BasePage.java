@@ -1,6 +1,6 @@
 package actions.commons;
 
-import actions.pageAction.HomePageAction;
+import actions.pageObjects.HomePageObject;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
@@ -58,10 +58,10 @@ public class BasePage {
         return driver.findElements(By.xpath(locator));
     }
 
-    public HomePageAction clickToElement(WebDriver driver, String locator) {
+    public HomePageObject clickToElement(WebDriver driver, String locator) {
         waitForElementVisible(driver, locator);
         getWebElement(driver, locator).click();
-        return new HomePageAction(driver);
+        return new HomePageObject(driver);
     }
 
     public void openPageUrl(WebDriver driver, String url) {

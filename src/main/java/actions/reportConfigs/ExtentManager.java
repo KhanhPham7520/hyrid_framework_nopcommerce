@@ -17,11 +17,11 @@ public class ExtentManager {
             extent = new ExtentReports(GlobalConstant.EXTENT_PATH + "/ExtentReportV2.html", true);
         }
         return extent;
-    }    private static ExtentReports extent = ExtentManager.getReporter();
+    }
 
     public static synchronized ExtentTest getTest() {
         return (ExtentTest) extentTestMap.get((int) (long) (Thread.currentThread().getId()));
-    }
+    }    private static ExtentReports extent = ExtentManager.getReporter();
 
     public static synchronized void endTest() {
         extent.endTest((ExtentTest) extentTestMap.get((int) (long) (Thread.currentThread().getId())));
@@ -32,6 +32,8 @@ public class ExtentManager {
         extentTestMap.put((int) (long) (Thread.currentThread().getId()), test);
         return test;
     }
+
+
 
 
 }

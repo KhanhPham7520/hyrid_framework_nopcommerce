@@ -1,6 +1,7 @@
 package actions.pageObjects;
 
 import actions.commons.BasePage;
+import actions.pageUIs.RegisterPageUI;
 import org.openqa.selenium.WebDriver;
 
 public class RegisterPageObject extends BasePage {
@@ -11,14 +12,38 @@ public class RegisterPageObject extends BasePage {
         this.driver = driver;
     }
 
+    public void enterToFirstNameTextbox(String inputValue) {
+        waitForElementVisible(driver, RegisterPageUI.FIRST_NAME_TEXT_BOX);
+        sendKeyToElement(driver, RegisterPageUI.FIRST_NAME_TEXT_BOX, inputValue);
+    }
+
+    public void enterToLastNameTextbox(String inputValue) {
+        waitForElementVisible(driver, RegisterPageUI.LAST_NAME_TEXT_BOX);
+        sendKeyToElement(driver, RegisterPageUI.LAST_NAME_TEXT_BOX, inputValue);
+    }
+
+    public void enterToEmailTextbox(String inputValue) {
+        waitForElementVisible(driver, RegisterPageUI.EMAIL_TEXT_BOX);
+        sendKeyToElement(driver, RegisterPageUI.EMAIL_TEXT_BOX, inputValue);
+    }
+
+    public void enterToPasswordTextbox(String inputValue) {
+        waitForElementVisible(driver, RegisterPageUI.PASSWORD_TEXT_BOX);
+        sendKeyToElement(driver, RegisterPageUI.PASSWORD_TEXT_BOX, inputValue);
+    }
+
+    public void enterToConfirmPasswordTextbox(String inputValue) {
+        waitForElementVisible(driver, RegisterPageUI.CONFIRM_PASSWORD_TEXT_BOX);
+        sendKeyToElement(driver, RegisterPageUI.CONFIRM_PASSWORD_TEXT_BOX, inputValue);
+    }
+
+    public void clickToRegisterButton() {
+        waitForElementClickable(driver, RegisterPageUI.REGISTER_BUTTON);
+        clickToElement(driver, RegisterPageUI.REGISTER_BUTTON);
+    }
+
     public void clickToMaleRadio() {
 
-    }
-
-    public void enterToFirstNameTextbox(String s) {
-    }
-
-    public void enterToLastNameTextbox(String s) {
     }
 
     public void selectDayDropdown(String s) {
@@ -30,19 +55,7 @@ public class RegisterPageObject extends BasePage {
     public void selectMonthDropdown(String s) {
     }
 
-    public void enterEmailCheckbox(String s) {
-    }
-
     public void enterToCompanyNameTextbox(String s) {
-    }
-
-    public void enterToConfirmPasswordTextbox(String s) {
-    }
-
-    public void enterToPasswordTextbox(String s) {
-    }
-
-    public void clickToRegisterButton(String s) {
     }
 
     public String getRegisterSuccessMessage() {

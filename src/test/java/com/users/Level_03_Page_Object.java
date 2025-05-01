@@ -42,11 +42,11 @@ public class Level_03_Page_Object extends BaseTest {
         registerPage.selectDayDropdown("");
         registerPage.selectMonthDropdown("");
         registerPage.selectYearDropdown("");
-        registerPage.enterEmailCheckbox("");
+        registerPage.enterToEmailTextbox("");
         registerPage.enterToCompanyNameTextbox("");
         registerPage.enterToPasswordTextbox("");
         registerPage.enterToConfirmPasswordTextbox("");
-        registerPage.clickToRegisterButton("");
+        registerPage.clickToRegisterButton();
 
         Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed");
     }

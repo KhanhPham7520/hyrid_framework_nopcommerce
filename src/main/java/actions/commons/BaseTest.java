@@ -1,9 +1,6 @@
 package actions.commons;
 
-import actions.pageObjects.CustomerInfoPageObject;
-import actions.pageObjects.HomePageObject;
-import actions.pageObjects.LoginPageObject;
-import actions.pageObjects.RegisterPageObject;
+import actions.pageObjects.*;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,6 +16,7 @@ public class BaseTest {
     protected RegisterPageObject registerPage;
     protected LoginPageObject loginPage;
     protected CustomerInfoPageObject customerInfoPage;
+    protected DesktopPageObject desktopPage;
 
     protected WebDriver getBrowserDriver(String browserName) {
         BrowserType browserType = BrowserType.valueOf(browserName.toUpperCase());

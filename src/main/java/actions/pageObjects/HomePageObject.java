@@ -28,4 +28,13 @@ public class HomePageObject extends BasePage {
         clickToElement(driver, HomePageUI.MY_ACCOUNT_LINK);
         return PageGenerator.getCustomerInfoPage(driver);
     }
+
+    public DesktopPageObject navigateToTop3Product() {
+        String top3ProductUrl = "http://localhost/desktops?viewmode=grid&orderby=0&pagesize=3&price=0-10000";
+        driver.navigate().to(top3ProductUrl);
+        return PageGenerator.getDesktopPage(driver);
+    }
+
+    public void clickToLoginLink() {
+    }
 }

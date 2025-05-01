@@ -1,8 +1,6 @@
 package com.knowledges;
 
 import actions.commons.BaseTest;
-import actions.pageAction.HomePageAction;
-import actions.pageAction.RegisterPageAction;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,9 +14,6 @@ public class Level_03_Page_Object_Pattern extends BaseTest {
 
     WebDriver driver;
 
-    HomePageAction homePage;
-    RegisterPageAction registerPage;
-
     @BeforeClass
     public void beforeClass() {
 
@@ -29,14 +24,14 @@ public class Level_03_Page_Object_Pattern extends BaseTest {
         driver.manage().window().setSize(new Dimension(1280, 800));
         driver.get("http://localhost/");
 
-        homePage = new HomePageAction(driver);
+        //homePage = new HomePageAction(driver);
     }
 
     @Test
     public void TC_01_Register() {
         homePage.clickToRegisterLink();
 
-        registerPage = new RegisterPageAction(driver);
+        //registerPage = new RegisterPageAction(driver);
         registerPage.enterToFirstNameTextbox("");
     }
 
