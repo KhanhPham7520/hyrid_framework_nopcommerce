@@ -36,6 +36,12 @@ public class HomePageObject extends BasePage {
     }
 
     public void clickToLoginLink() {
-
     }
+
+    public void uploadFile(String fileName) {
+        waitForElementPresence(driver, HomePageUI.UPLOAD_FILE_TYPE);
+        uploadFiles(driver, fileName);
+    }
+
+
 }

@@ -31,4 +31,8 @@ public class PageGenerator {
         return new DesktopPageObject(driver);
     }
 
+    public static Object getPageInstance(Object object,WebDriver driver){
+        return new Object();
+    }
+
 }

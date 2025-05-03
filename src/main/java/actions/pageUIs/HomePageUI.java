@@ -13,4 +13,6 @@ public class HomePageUI {
             "li//a[contains(text(),'Desktops')]";
 
     public static final String MY_ACCOUNT_LINK = "";
+
+    public static final String UPLOAD_FILE_TYPE = "//input[@name='files[]']";
 }

@@ -1,6 +1,7 @@
 package actions.commons;
 
 import actions.pageObjects.HomePageObject;
+import actions.pageUIs.HomePageUI;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
@@ -260,6 +261,11 @@ public class BasePage {
                 until(ExpectedConditions.visibilityOfElementLocated(getByXpath(locator)));
     }
 
+    public WebElement waitForElementPresence(WebDriver driver, String locator) {
+        return new WebDriverWait(driver, Duration.ofSeconds(LONG_TIMEOUT)).
+                until(ExpectedConditions.presenceOfElementLocated(getByXpath(locator)));
+    }
+
     public boolean waitForElementSelected(WebDriver driver, String locator) {
         return new WebDriverWait(driver, Duration.ofSeconds(LONG_TIMEOUT)).
                 until(ExpectedConditions.elementToBeSelected(getWebElement(driver, locator)));
@@ -270,5 +276,23 @@ public class BasePage {
                 until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(locator)));
     }
 
+    public void uploadFiles(WebDriver driver, String... fileNames){
+        String filePath = GlobalConstant.UPLOAD_PATH;
+        String fullFileName = "";
+        for(String file : fileNames){
+            fullFileName = fullFileName + filePath + file + "\n";
+        }
+        fullFileName = fullFileName.trim();
+        System.out.println("url of image : " + fullFileName);
+        getWebElement(driver, HomePageUI.UPLOAD_FILE_TYPE).sendKeys(fullFileName);
+    }
+
+    public void sleepInSecond(int second){
+        try {
+            Thread.sleep(second);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 }

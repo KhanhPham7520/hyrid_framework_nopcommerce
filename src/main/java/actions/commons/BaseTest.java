@@ -5,6 +5,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
 
@@ -28,6 +29,10 @@ public class BaseTest {
 
             case EDGE:
                 driver = new EdgeDriver();
+                break;
+
+            case FIREFOX:
+                driver = new FirefoxDriver();
                 break;
 
             default:
