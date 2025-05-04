@@ -97,6 +97,10 @@ public class BasePage {
         return driver.findElement(By.xpath(locator));
     }
 
+    public WebElement getWebElement(WebDriver driver, String locator, String value) {
+        return driver.findElement(By.xpath(String.format(locator, value)));
+    }
+
     public void acceptAlert(WebDriver driver) {
         driver.switchTo().alert().accept();
     }
@@ -207,6 +211,10 @@ public class BasePage {
         return getWebElement(driver, locator).isDisplayed();
     }
 
+    public boolean isElementDisplayed(WebDriver driver, String locator, String value) {
+        return getWebElement(driver, locator, value).isDisplayed();
+    }
+
     public boolean isElementSelected(WebDriver driver, String locator) {
         return getWebElement(driver, locator).isSelected();
     }
@@ -261,6 +269,11 @@ public class BasePage {
                 until(ExpectedConditions.visibilityOfElementLocated(getByXpath(locator)));
     }
 
+    public WebElement waitForElementVisible(WebDriver driver, String locator, String value) {
+        return new WebDriverWait(driver, Duration.ofSeconds(LONG_TIMEOUT)).
+                until(ExpectedConditions.visibilityOfElementLocated(getByXpath(String.format(locator, value))));
+    }
+
     public WebElement waitForElementPresence(WebDriver driver, String locator) {
         return new WebDriverWait(driver, Duration.ofSeconds(LONG_TIMEOUT)).
                 until(ExpectedConditions.presenceOfElementLocated(getByXpath(locator)));
@@ -293,6 +306,11 @@ public class BasePage {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public boolean isFileLoadedSuccess(WebDriver driver, String fileName){
+        waitForElementVisible(driver, HomePageUI.FILE_LOADED_BY_NAME, fileName);
+        return isElementDisplayed(driver, HomePageUI.FILE_LOADED_BY_NAME, fileName);
     }
 
 }

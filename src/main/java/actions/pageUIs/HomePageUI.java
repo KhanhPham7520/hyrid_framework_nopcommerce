@@ -15,4 +15,5 @@ public class HomePageUI {
     public static final String MY_ACCOUNT_LINK = "";
 
     public static final String UPLOAD_FILE_TYPE = "//input[@name='files[]']";
+    public static final String FILE_LOADED_BY_NAME = "//p[@class='name' and text()='%s']";
 }
