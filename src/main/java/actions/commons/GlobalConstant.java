@@ -21,6 +21,7 @@ public class GlobalConstant {
 
     // Wait info
     public static final long SHORT_TIMEOUT = 10;
+
     public static final long LONG_TIMEOUT = 30;
 
     // Retry Case Failed

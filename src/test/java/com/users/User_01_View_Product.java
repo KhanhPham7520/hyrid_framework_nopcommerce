@@ -1,7 +1,7 @@
 package com.users;
 
 import actions.commons.BaseTest;
-import actions.pageAction.PageGenerator;
+import actions.pageObjects.PageGenerator;
 import actions.pageUIs.LoginPageUI;
 import jdk.jfr.Description;
 import lombok.extern.slf4j.Slf4j;

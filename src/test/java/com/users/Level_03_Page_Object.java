@@ -1,7 +1,7 @@
 package com.users;
 
 import actions.commons.BaseTest;
-import actions.pageAction.PageGenerator;
+import actions.pageObjects.PageGenerator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;

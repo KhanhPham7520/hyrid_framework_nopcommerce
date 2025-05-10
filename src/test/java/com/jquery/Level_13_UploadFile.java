@@ -1,7 +1,7 @@
 package com.jquery;
 
 import actions.commons.BaseTest;
-import actions.pageAction.PageGenerator;
+import actions.pageObjects.PageGenerator;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;

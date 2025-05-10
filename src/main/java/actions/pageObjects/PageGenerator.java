@@ -1,6 +1,5 @@
-package actions.pageAction;
+package actions.pageObjects;
 
-import actions.pageObjects.*;
 import org.openqa.selenium.WebDriver;
 
 public class PageGenerator {
